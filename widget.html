@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Widget</title>
+
+</head>
+<body>
+	<form action="contact.php" method="POST" onsubmit="return check_the_box()">
+		<input name="email" type="text" required="yes">
+		<a href="#">I've read and agree to the ToS </a>
+		<input id="chx" type="checkbox">
+		<button type="submit" >Submit</button>
+		<span style="display: none" id="pls"> Please check the Terms of Service box</span>
+	</form>
+	<script type="text/javascript">
+	var box = document.getElementById("chx");
+	var alrt = document.getElementById("pls");
+	function check_the_box(){
+		if(!box.checked) {
+			alrt.setAttribute("style","display: inline");
+			return false
+
+		}
+		else {
+	return true
+		}
+
+	}
+</script>
+</body>
+</html>
