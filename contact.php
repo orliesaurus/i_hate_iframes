@@ -86,11 +86,10 @@ function sendEmail($APIKey,$secretKey,$buddy) {
 	        /*This below is where you edit your mailing list body subject etc, you can put a personalised message in here as you wish and you can use HTML as long as u escape it :)*/
 	        'subject' => 'Welcome to my mailing list',
 	        'text' => 'Body of email here',
-	        'html' => 'Click the confirm  URL to ensure this is your email and to be added to the mailing list <a href="http://localhost:8888/mailjet-apiv3-php/contact.php?confirmation=' .makeConfirmation($buddy).'&email='.urlencode($buddy).'">CONFIRM</a>'
+	        'html' => 'Click the confirm  URL to ensure this is your email and to be added to the mailing list <a href="'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'].'contact.php?confirmation=' .makeConfirmation($buddy).'&email='.urlencode($buddy).'">CONFIRM</a>'
 	    )
 	));
 	//Run pony! Run!
-	file_put_contents("WRITTEN".time().".TXT", "wtf");
 	$resp = curl_exec($curl);
 
 
@@ -133,8 +132,6 @@ elseif (isset($_POST['email'])) {
 	}
 }
 else {  echo "no email or auth code, should you be here?"; } 
-//var_dump(checkConfirmation("21827c0cbe4e4b966be3498f4d05b92a","orlando@mailjet.com"));
-//sendEmail($APIKey,$secretKey,$newguy);
 
 
 
