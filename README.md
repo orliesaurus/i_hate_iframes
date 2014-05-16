@@ -1,7 +1,8 @@
 i_hate_iframes
 ==============
 
-Mailjet Widget in PHP
+Mailjet Widget in PHP instead of that buggy iframe imeplementation.
+**This is not yet functional because of a weird behaviour of the Mailjet API which automaitcally creates objects in the database!** More on that later.
 
 #HOW-TO
 
